@@ -8,11 +8,10 @@
 			    	<?php while ( have_rows('slider') ) : the_row(); ?>
 
 						<div class="slick-container">
-							<div class="slideContent">
-								<a href="<?php the_sub_field('link'); ?>">
-									<div style="background-image: url('<?php the_sub_field('img'); ?>'); width: 100%; height: 100vh; background-repeat: no-repeat; background-size: cover; background-size: 100%" ></div>
-								</a>
-							</div>
+							<!-- <a href="<?php the_sub_field('link'); ?>"> -->
+							<!-- <div class="orange_filter"></div> -->
+							<div class="slideContent" style="background: url('<?php the_sub_field('img'); ?>'); width: 100%; height: 100vh; background-repeat: no-repeat; background-size: cover; filter: grayscale(100%);" ><h1><?php the_sub_field('title'); ?></h1></div>
+							<!-- </a> -->
 						</div>
 
 				    <?php endwhile; ?>

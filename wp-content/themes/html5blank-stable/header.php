@@ -46,6 +46,11 @@
 						<? wp_nav_menu($defaults); ?>
 					</nav>
 					<!-- /nav -->
-
+					<button class="hamburger hamburger--slider" type="button">
+							<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+							<span class="txt">Menu</span>
+						</span>
+					</button>
 			</header>
 			<!-- /header -->

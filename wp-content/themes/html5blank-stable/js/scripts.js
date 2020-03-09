@@ -5,6 +5,15 @@
 // 	}
 // });
 
+var $body = $('body');
+
+
+function onLoad(){
+	$body.on('click', '.hamburger', function(){
+		$('.hamburger').toggleClass('is-active');
+		// $('#menu').clearQueue().stop().slideToggle();
+	});
+};
 
 (function ($, root, undefined) {
 
@@ -12,7 +21,8 @@
 
 		'use strict';
 
-		// DOM ready, take it away
+
+
 
 	});
 

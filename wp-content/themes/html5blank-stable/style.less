@@ -54,7 +54,7 @@ input:focus {
 }
 
 h1{
-	font-size: 4em;
+	font-size: 7rem;
 }
 h2{
 	font-size: 3em;
@@ -105,9 +105,100 @@ h2{
 	}
 }
 
-/* sidebar */
-.sidebar {
+/* hamburger */
+@hamburger-padding-x			: 15px;
+@hamburger-padding-y			: 15px;
+@hamburger-layer-width			: 35px;
+@hamburger-layer-height			: 4px;
+@hamburger-layer-spacing		: 6px;
+@hamburger-layer-color			: @c1;
+@hamburger-layer-border-radius	: 4px;
+@hamburger-active-layer-color	: @c2;
+.hamburger {
+    padding: @hamburger-padding-y @hamburger-padding-x;
+    display: inline-block;
+    cursor: pointer;
 
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+
+    // Normalize (<button>)
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+
+    &.is-active {
+        .hamburger-inner,
+        .hamburger-inner::before,
+        .hamburger-inner::after {
+            background-color: @hamburger-active-layer-color;
+        }
+    }
+    .txt{
+        display: block;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        color: black;
+        font-size: 10px;
+        letter-spacing: 3px;
+        top: 110%;
+
+        span{
+            transition: color .25s ease-in-out;
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+
+            &.opened{
+                transform: translateX(100px);
+                opacity: 0;
+            }
+        }
+    }
+}
+.hamburger-box {
+    width: @hamburger-layer-width;
+    height: @hamburger-layer-height * 3 + @hamburger-layer-spacing * 2;
+    display: inline-block;
+    position: relative;
+}
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: @hamburger-layer-height / -2;
+
+    &,
+    &::before,
+    &::after {
+        width: @hamburger-layer-width;
+        height: @hamburger-layer-height;
+        background-color: @hamburger-layer-color;
+        border-radius: @hamburger-layer-border-radius;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+    }
+
+    &::before {
+        top: (@hamburger-layer-spacing + @hamburger-layer-height) * -1;
+    }
+
+    &::after {
+        bottom: (@hamburger-layer-spacing + @hamburger-layer-height) * -1;
+    }
 }
 /* footer */
 .footer {
@@ -117,6 +208,16 @@ h2{
 /*------------------------------------*\
     GENERAL
 \*------------------------------------*/
+.orange_filter{
+	position: absolute;
+	background-color: @c1;
+	z-index: 50;
+	opacity: 0.2;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
 .two_bloc_text{
 	display: flex;
 	justify-content: space-between;
@@ -132,8 +233,20 @@ h2{
 /*------------------------------------*\
     PAGES
 \*------------------------------------*/
-.home main{
+.home{
+	.slideContent{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
 
+		h1{
+			position: relative;
+			display: block;
+		    max-width: 750px;
+			margin-left: 10vw;
+			z-index: 100;
+		}
+	}
 }
 
 
