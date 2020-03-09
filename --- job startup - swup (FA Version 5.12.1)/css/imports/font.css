@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Heebo Light'), local('Heebo-Light'), url(https://fonts.gstatic.com/s/heebo/v5/NGS3v5_NC0k9P9ldb6RMkKg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Heebo Medium'), local('Heebo-Medium'), url(https://fonts.gstatic.com/s/heebo/v5/NGS3v5_NC0k9P9kFbqRMkKg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Heebo Bold'), local('Heebo-Bold'), url(https://fonts.gstatic.com/s/heebo/v5/NGS3v5_NC0k9P9lNaKRMkKg.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPHw.woff) format('woff');
+}
