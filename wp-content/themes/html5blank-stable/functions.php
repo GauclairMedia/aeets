@@ -14,6 +14,9 @@
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
 
 if (!isset($content_width))
 {
@@ -62,6 +65,11 @@ if (function_exists('add_theme_support'))
 	Functions
 \*------------------------------------*/
 
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page();
+
+}
 // HTML5 Blank navigation
 function html5blank_nav()
 {

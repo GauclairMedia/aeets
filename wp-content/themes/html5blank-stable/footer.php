@@ -2,12 +2,22 @@
 			<footer class="footer" role="contentinfo">
 
 				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
+				<div class="logo">
+					<a href="<?php echo home_url(); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/logo_white.svg" alt="Logo" class="logo-img">
+					</a>
+				</div>
+				<div class="copyright">
+					<?php the_field('copyright', 'option'); ?>
+				</div>
+				<div class="social_media">
+					<?php if( have_rows('social_media', 'option') ): ?>
+						<?php while ( have_rows('social_media', 'option') ) : the_row(); ?>
+							<a href="<?php the_sub_field('lien_externe'); ?>"><img src="<?php the_sub_field('img'); ?>" alt="icon"></a>
+						<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
 				<!-- /copyright -->
-
 			</footer>
 			<!-- /footer -->
 
